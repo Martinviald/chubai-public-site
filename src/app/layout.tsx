@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Chubai - Sistema de Gestión Escolar",
+  title: "Chubai - Gestión Escolar",
   description: "Plataforma integral para la gestión de transporte escolar, control de asistencia y comunicación con padres",
 };
 
