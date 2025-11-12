@@ -16,13 +16,13 @@ export class EmailSender {
   private transporter: Transporter;
 
   constructor() {
-    this.initializeTransporter();
+    this.transporter = this.initializeTransporter();
   }
 
   /**
    * Inicializa el transportador de Nodemailer con configuración SMTP
    */
-  private initializeTransporter() {
+  private initializeTransporter(): Transporter {
     const emailConfig = {
       host: process.env.EMAIL_SERVICE_HOST || 'smtp.gmail.com',
       port: parseInt(process.env.EMAIL_SERVICE_PORT || '587', 10),
@@ -33,7 +33,7 @@ export class EmailSender {
       },
     };
 
-    this.transporter = nodemailer.createTransport(emailConfig);
+    return nodemailer.createTransport(emailConfig);
   }
 
   /**
