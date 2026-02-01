@@ -17,7 +17,7 @@ export default function AboutTeamPage() {
             linkedin: 'https://www.linkedin.com/in/juan-ignacio-aspillaga-vergara-20265420b/',
         },
         {
-            image: '/team/Martín.png',
+            image: '/team/Martín.jpg',
             name: 'Martín Vial',
             role: 'Jefe de tecnología y desarrollo',
             description:
