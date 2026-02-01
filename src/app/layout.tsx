@@ -1,35 +1,29 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import { NavbarPublic } from "@/components/NavbarPublic";
+// app/layout.tsx
+import './globals.css';
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import { NavbarPublic } from '@/components/NavbarPublic';
+import { Toaster } from "@/components/ui/toaster";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: "Chubai - Gestión Escolar",
-  description: "Plataforma integral para la gestión de transporte escolar, control de asistencia y comunicación con padres",
+  title: 'Chubai',
+  description: 'Una aplicación para rastrear y gestionar información escolar',
+  icons: { icon: '/favicon.ico' },
 };
 
 export default function RootLayout({
-  children,
+  children
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
-    <html lang="es">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang="es" className={inter.className}>
+      <body>
         <NavbarPublic />
         {children}
+        <Toaster />
       </body>
     </html>
   );

@@ -1,0 +1,50 @@
+{
+  "alerts": [
+    {
+      "id": "alert-002",
+      "type": "UNAUTHORIZED_ACCESS",
+      "severity": "CRITICAL",
+      "timestamp": "2024-12-09T14:35:20Z",
+      "studentId": "STU-004",
+      "studentName": "Diego López Castro",
+      "message": "Intento de retiro por persona no autorizada",
+      "status": "RESOLVED",
+      "actionRequired": "Revisar protocolos de seguridad",
+      "assignedTo": "Seguridad Principal",
+      "resolvedAt": "2024-12-09T14:40:00Z",
+      "resolutionNotes": "Se contactó al apoderado y se verificó identidad"
+    },
+    {
+      "id": "alert-003",
+      "type": "LATE_ARRIVAL",
+      "severity": "INFO",
+      "timestamp": "2024-12-09T09:30:00Z",
+      "studentId": "STU-005",
+      "studentName": "Valentina Soto Muñoz",
+      "message": "Llegada tardía sin justificación previa",
+      "status": "UNRESOLVED",
+      "actionRequired": "Solicitar justificación al apoderado",
+      "assignedTo": "Inspector General"
+    },
+    {
+      "id": "alert-005",
+      "type": "MISSING_EXIT",
+      "severity": "WARNING",
+      "timestamp": "2024-12-09T16:00:00Z",
+      "studentId": "STU-007",
+      "studentName": "Isabella Rojas Vega",
+      "message": "No se ha registrado salida del establecimiento",
+      "status": "UNRESOLVED",
+      "actionRequired": "Contactar apoderado y verificar ubicación",
+      "assignedTo": "Inspector General"
+    }
+  ],
+  "summary": {
+    "total": 3,
+    "critical": 1,
+    "warning": 2,
+    "info": 1,
+    "unresolved": 2,
+    "resolved": 1
+  }
+}

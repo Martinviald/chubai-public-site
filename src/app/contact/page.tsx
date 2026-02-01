@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { 
+import {
   Mail,
   Phone,
   MapPin,
@@ -19,6 +19,7 @@ import {
   Facebook,
   Instagram
 } from 'lucide-react';
+import { FooterPublic } from '@/components/FooterPublic';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -37,8 +38,8 @@ export default function ContactPage() {
     {
       icon: Mail,
       title: 'Email',
-      content: 'chubaichile@gmail.com',
-      link: 'mailto:chubaichile@gmail.com',
+      content: 'contacto@chubai.com',
+      link: 'mailto:contacto@chubai.com',
       gradient: 'from-blue-500 to-cyan-500'
     },
     {
@@ -48,6 +49,20 @@ export default function ContactPage() {
       link: 'tel:+56966567696',
       gradient: 'from-purple-500 to-pink-500'
     },
+    // {
+    //   icon: MapPin,
+    //   title: 'Dirección',
+    //   content: 'Av. Principal 123, Santiago, Chile',
+    //   link: 'https://maps.google.com',
+    //   gradient: 'from-green-500 to-emerald-500'
+    // },
+    // {
+    //   icon: Clock,
+    //   title: 'Horario de Atención',
+    //   content: 'Lunes a Viernes, 9:00 - 18:00',
+    //   link: null,
+    //   gradient: 'from-orange-500 to-red-500'
+    // }
   ];
 
   const socialLinks = [
@@ -70,7 +85,7 @@ export default function ContactPage() {
     setIsSubmitting(true);
 
     try {
-      // Enviar datos al API route
+      // Llamar a la ruta API local de Next.js que usa el EmailSender
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
@@ -79,10 +94,10 @@ export default function ContactPage() {
         body: JSON.stringify(formData),
       });
 
-      const result = await response.json();
+      const data = await response.json();
 
-      if (result.success) {
-        console.log('✅ Formulario enviado exitosamente:', formData);
+      if (response.ok && data.success) {
+        console.log('✅ Formulario enviado exitosamente:', data);
         setSubmitSuccess(true);
 
         // Resetear formulario
@@ -100,19 +115,19 @@ export default function ContactPage() {
           setSubmitSuccess(false);
         }, 5000);
       } else {
-        console.error('❌ Error en la respuesta:', result);
-        alert(result.error || 'Hubo un error al enviar el formulario. Por favor, intenta nuevamente.');
+        console.error('❌ Error en la respuesta:', data);
+        alert(data.error || 'Hubo un error al enviar el formulario. Por favor, intenta nuevamente.');
       }
     } catch (error) {
       console.error('❌ Error al enviar formulario:', error);
-      alert('Error de conexión. Por favor, verifica tu conexión a internet e intenta nuevamente.');
+      alert('Error de conexión. Por favor, verifica tu conexión a Internet.');
     } finally {
       setIsSubmitting(false);
     }
   };
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 pt-20">
+    <main className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 pt-16 lg:pt-20">
       {/* Hero Section */}
       <section className="relative overflow-hidden">
         {/* Background Effects */}
@@ -123,12 +138,14 @@ export default function ContactPage() {
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 sm:pt-24 sm:pb-20">
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-center"
           >
+
             {/* Headline */}
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
@@ -137,7 +154,7 @@ export default function ContactPage() {
               className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-slate-900 mb-6"
             >
               <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                Contáctanos
+                Conversemos sobre tu colegio
               </span>
             </motion.h1>
 
@@ -306,11 +323,10 @@ export default function ContactPage() {
                     disabled={isSubmitting}
                     whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
                     whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
-                    className={`w-full px-8 py-4 rounded-xl font-semibold text-lg shadow-lg transition-all duration-300 flex items-center justify-center gap-2 ${
-                      isSubmitting
-                        ? 'bg-slate-400 cursor-not-allowed'
-                        : 'bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white'
-                    }`}
+                    className={`w-full px-8 py-4 rounded-xl font-semibold text-lg shadow-lg transition-all duration-300 flex items-center justify-center gap-2 ${isSubmitting
+                      ? 'bg-slate-400 cursor-not-allowed'
+                      : 'bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white'
+                      }`}
                   >
                     {isSubmitting ? (
                       <>
@@ -377,7 +393,7 @@ export default function ContactPage() {
                           {info.title}
                         </p>
                         {info.link ? (
-                          <a 
+                          <a
                             href={info.link}
                             target={info.link.startsWith('http') ? '_blank' : undefined}
                             rel={info.link.startsWith('http') ? 'noopener noreferrer' : undefined}
@@ -441,7 +457,7 @@ export default function ContactPage() {
               whileTap={{ scale: 0.95 }}
               className="inline-flex"
             >
-              <a 
+              <a
                 href="tel:+56966567696"
                 className="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold text-lg shadow-2xl hover:shadow-3xl transition-all duration-300 flex items-center gap-2"
               >
@@ -453,34 +469,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-slate-900 text-slate-400 py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <Image
-              src="/logo.png"
-              alt="ChubAI Logo"
-              width={120}
-              height={30}
-              className="mx-auto mb-4 opacity-80 invert"
-            />
-            <p className="text-sm">
-              © 2025 ChubAI. Plataforma de gestión escolar inteligente.
-            </p>
-            <div className="mt-4 flex justify-center gap-6">
-              <Link href="/" className="hover:text-white transition-colors">
-                Inicio
-              </Link>
-              <Link href="/about" className="hover:text-white transition-colors">
-                Sobre Nosotros
-              </Link>
-              <Link href="/contact" className="hover:text-white transition-colors">
-                Contacto
-              </Link>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <FooterPublic />
     </main>
   );
 }

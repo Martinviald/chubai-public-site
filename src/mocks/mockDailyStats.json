@@ -1,0 +1,32 @@
+{
+  "date": "2024-12-09",
+  "stats": {
+    "totalStudents": 450,
+    "presentToday": 432,
+    "absentToday": 18,
+    "entryEvents": 425,
+    "exitEvents": 380,
+    "pendingApprovals": 7,
+    "rejectedEvents": 2,
+    "averageEntryTime": "08:15",
+    "averageExitTime": "14:45",
+    "unauthorizedAccessAttempts": 1
+  },
+  "hourlyDistribution": [
+    { "hour": "07:00", "entries": 15, "exits": 0 },
+    { "hour": "07:30", "entries": 45, "exits": 0 },
+    { "hour": "08:00", "entries": 180, "exits": 0 },
+    { "hour": "08:30", "entries": 150, "exits": 0 },
+    { "hour": "09:00", "entries": 35, "exits": 0 },
+    { "hour": "13:00", "entries": 0, "exits": 20 },
+    { "hour": "14:00", "entries": 0, "exits": 85 },
+    { "hour": "14:30", "entries": 0, "exits": 150 },
+    { "hour": "15:00", "entries": 0, "exits": 125 }
+  ],
+  "methodDistribution": {
+    "QR_SCAN": 320,
+    "FACIAL_RECOGNITION": 250,
+    "MANUAL": 235,
+    "RFID_CARD": 0
+  }
+}
