@@ -1,6 +1,15 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: '/chubai-landing/index.html',
+        permanent: false,
+      },
+    ];
+  },
   env: {
     // Variables del sistema de email
     EMAIL_SERVICE_HOST: process.env.EMAIL_SERVICE_HOST,
