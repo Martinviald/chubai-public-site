@@ -184,7 +184,7 @@ Fecha: ${new Date().toLocaleString('es-CL')}
 
       const mailOptions = {
         from: `"ChubAI Contacto Web" <${process.env.EMAIL_SERVICE_USER}>`,
-        to: process.env.CONTACT_FORM_EMAIL || 'chubaichile@gmail.com',
+        to: process.env.CONTACT_FORM_EMAIL || 'juan@chubai.cl',
         replyTo: email,
         subject: emailSubject,
         text: textContent,
@@ -193,7 +193,7 @@ Fecha: ${new Date().toLocaleString('es-CL')}
 
       await this.transporter.sendMail(mailOptions);
       
-      console.log(`✅ Email de contacto enviado exitosamente a ${process.env.CONTACT_FORM_EMAIL || 'chubaichile@gmail.com'}`);
+      console.log(`✅ Email de contacto enviado exitosamente a ${process.env.CONTACT_FORM_EMAIL || 'juan@chubai.cl'}`);
       console.log(`📧 De: ${name} (${email})`);
       console.log(`🏷️ Asunto: ${subject}`);
 

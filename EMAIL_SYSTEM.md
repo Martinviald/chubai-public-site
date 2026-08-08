@@ -33,11 +33,11 @@ Crea un archivo `.env.local` en la raíz de `apps/landing/` con las siguientes v
 EMAIL_SERVICE_HOST=smtp.gmail.com
 EMAIL_SERVICE_PORT=587
 EMAIL_SERVICE_SECURE=false
-EMAIL_SERVICE_USER=chubaichile@gmail.com
+EMAIL_SERVICE_USER=juan@chubai.cl
 EMAIL_SERVICE_PASS=tu-contraseña-de-aplicacion
 
 # Email destino del formulario de contacto
-CONTACT_FORM_EMAIL=chubaichile@gmail.com
+CONTACT_FORM_EMAIL=juan@chubai.cl
 ```
 
 ### 2. Contraseña de Aplicación de Gmail

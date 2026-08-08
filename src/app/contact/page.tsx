@@ -38,8 +38,8 @@ export default function ContactPage() {
     {
       icon: Mail,
       title: 'Email',
-      content: 'contacto@chubai.com',
-      link: 'mailto:contacto@chubai.com',
+      content: 'contacto@chubai.cl',
+      link: 'mailto:contacto@chubai.cl',
       gradient: 'from-blue-500 to-cyan-500'
     },
     {
