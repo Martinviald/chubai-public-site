@@ -1,14 +1,21 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  async redirects() {
-    return [
-      {
-        source: '/',
-        destination: '/chubai-landing/index.html',
-        permanent: false,
-      },
-    ];
+  // La raiz sirve la landing estatica SIN cambiar la URL. Antes esto era un redirect 307,
+  // que dejaba "chubai.cl/chubai-landing/index.html" a la vista en la barra de direcciones.
+  // Un rewrite entrega el mismo archivo manteniendo "chubai.cl/".
+  // Va en `beforeFiles` para que gane sobre el enrutado de la app.
+  async rewrites() {
+    return {
+      beforeFiles: [
+        {
+          source: '/',
+          destination: '/chubai-landing/index.html',
+        },
+      ],
+      afterFiles: [],
+      fallback: [],
+    };
   },
   env: {
     // Variables del sistema de email
