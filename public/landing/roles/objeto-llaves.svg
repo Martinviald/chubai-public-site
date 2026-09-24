@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" width="200" height="240">
+  <g stroke="#000" stroke-width="6" stroke-linejoin="round" stroke-linecap="round" fill="none">
+    <!-- argolla -->
+    <circle cx="100" cy="42" r="26" stroke-width="9"/>
+    <!-- llave 1 -->
+    <g transform="rotate(-18 100 68)">
+      <circle cx="100" cy="88" r="20" fill="#fdea6b"/>
+      <circle cx="100" cy="88" r="6" fill="#061447" stroke="none"/>
+      <path d="M100 108 L 100 196 L 118 196 L 118 184 L 106 184 L 106 172 L 116 172 L 116 160 L 106 160 L 106 108 Z" fill="#fdea6b"/>
+    </g>
+    <!-- llave 2 -->
+    <g transform="rotate(16 100 68)">
+      <rect x="82" y="66" width="36" height="40" rx="10" fill="#9ddadb"/>
+      <circle cx="100" cy="82" r="5" fill="#061447" stroke="none"/>
+      <path d="M94 106 L 94 190 L 110 190 L 110 178 L 100 178 L 100 166 L 110 166 L 110 154 L 100 154 L 100 106 Z" fill="#9ddadb"/>
+    </g>
+  </g>
+</svg>

@@ -163,6 +163,13 @@ export function NavbarPublic() {
               {link.label}
             </Link>
           ))}
+
+          {/* Acceso a la plataforma: URL absoluta a propósito — esta landing
+              vive en chubai.cl, un dominio distinto de donde corre la app real
+              y donde Auth0 tiene el callback registrado. */}
+          <Button asChild variant="primary" size="sm">
+            <Link href="https://app.chubai.cl/auth/login">Acceder</Link>
+          </Button>
         </div>
       </div>
 
@@ -287,6 +294,14 @@ export function NavbarPublic() {
                     {link.label}
                   </Link>
                 ))}
+
+                <Link
+                  href="https://app.chubai.cl/auth/login"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="mt-2 flex items-center justify-center rounded-lg bg-primary px-4 py-3 text-base font-bold text-primary-foreground"
+                >
+                  Acceder
+                </Link>
               </nav>
             </div>
           </div>
