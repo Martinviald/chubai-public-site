@@ -28,12 +28,14 @@ export function Logo({ variant = 'default', size = 'lg', className }: LogoProps)
   };
 
   const getSize = () => {
-    if (variant === 'compact') return compactSize[size];
+    // Cuadrado: mismo ancho y alto (antes devolvía un número suelto y
+    // next/image reclamaba que faltaba el width).
+    if (variant === 'compact') return { width: compactSize[size], height: compactSize[size] };
     if (variant === 'compact-horizontal') return compactHorizontal[size];
     return dimensions[size];
   };
 
-  const { width, height } = getSize() as { width: number; height: number };
+  const { width, height } = getSize();
 
   return (
     <div className={cn('flex items-center justify-center', className)}>

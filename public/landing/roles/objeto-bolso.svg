@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 260" width="200" height="260">
+  <!-- Bolso bandolera, café, colgando de la mano por la correa. El punto
+       de agarre está arriba al centro. -->
+  <g stroke-linejoin="round" stroke-linecap="round">
+    <path d="M100 8 C 70 40, 52 80, 48 118 M100 8 C 130 40, 148 80, 152 118" fill="none" stroke="#000" stroke-width="8"/>
+    <path d="M100 8 C 70 40, 52 80, 48 118 M100 8 C 130 40, 148 80, 152 118" fill="none" stroke="#a5693a" stroke-width="4"/>
+    <path d="M34 118 L 166 118 L 170 232 C 170 240, 30 240, 30 232 Z" fill="#8b5a2b" stroke="#000" stroke-width="6"/>
+    <path d="M30 112 C 30 100, 170 100, 170 112 L 170 162 C 130 172, 70 172, 30 162 Z" fill="#a5693a" stroke="#000" stroke-width="6"/>
+    <rect x="86" y="150" width="28" height="18" rx="4" fill="#fdea6b" stroke="#000" stroke-width="4"/>
+  </g>
+</svg>
